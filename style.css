@@ -8,6 +8,7 @@
     --section-padding: 2rem;
 }
 body {
+    margin: 0 auto;
     min-height: 100vh;
     max-width: 1200px;
     background: #fff;
