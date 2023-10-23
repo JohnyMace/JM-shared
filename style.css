@@ -4,8 +4,12 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+:root {
+    --section-padding: 2rem;
+}
 body {
     min-height: 100vh;
+    max-width: 1200px;
     background: #fff;
     color: black;
 }
@@ -13,9 +17,28 @@ a {
     text-decoration: none;
     color: black;
 }
-/* ↑↑ global reset ↑↑ */
+.uppercase {
+    text-transform: uppercase;
+}
+.section-heading {
+    text-align: center;
+    font-size: 3rem;
+}
+.border-bar-section {
+    width: 25%;
+    height: 20px;
+    background-image: url(./images/img-bg-stripes-repeating-angle-blackwhite.svg);
+    background-repeat: repeat;
+    background-size: 20px;
+    margin: 2rem auto;
+}
+.border-bar-section-white {
+    background-image: url(./images/img-bg-stripes-repeating-angle-white.png);
+    background-size: 25px;
+}
+/************** ↑↑ global items + reset ↑↑ */
 
-/* ↓↓ navbar + hero ↓↓ */
+/************************** navigation top */
 .nav-main {
     display: flex;
     justify-content: space-between;
@@ -34,33 +57,35 @@ a {
     align-items: center;
     position: relative;
     
-    gap: 0rem;
     min-height: 100px;
     list-style-type: none;
 }
 .nav-links a {
+    display: block;
     padding: 10px;
 }
 .nav-links a:hover {
-    border-bottom: 2px solid ligh;
+    border-bottom: 2px solid blue;
+    border-top: 2px solid transparent;
 }
 @media (width < 600px) {
     .nav-links a {
         display: none;
     }
 }
+
+/************************** hero */
 .hero {
     display: flex;
     flex-wrap: wrap;
 
-    background-color: aliceblue;
+    background-color: #efefef;
     width: 100%;
-    min-height: 200px;
 }
 .hero-heading,
 .hero-img-wrap {
     width: 50%;
-    padding: 0.8rem;
+    padding: 1rem;
 }
 .hero-heading {
     display: flex;
@@ -80,6 +105,7 @@ a {
 }
 .hero-img {
     width: 100%;
+    height: auto;
     border-radius: 30px;
 }
 @media (width < 600px) {
@@ -94,7 +120,7 @@ a {
         margin-top: 1rem;
     }
 }
-.loading-bar {
+.border-bar-hero {
     width: 65%;
     height: 20px;
     background-image: url(./images/img-bg-stripes-repeating-angle-blackwhite.svg);
@@ -102,6 +128,163 @@ a {
     background-size: 20px;
     
 }
-/* ↑↑ navbar + hero ↑↑ */
 
-/* ↓↓ content ↓↓ */
+/************************** motto */
+.motto-wrap {
+    background-color: #222;
+    width: 100%;
+}
+.down-arrow {
+    width: 1px;
+    border: 15px solid transparent;
+    border-top: 15px solid #efefef;
+    margin: 0 auto;
+}
+.up-arrow {
+    width: 1px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid white;
+    margin: 0 auto;
+}
+.motto {
+    width: 65%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 0 3rem 0;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.7rem;
+}
+@media (width < 600px) {
+    .motto {
+        width: 80%;
+    }
+}
+
+/************************** services */
+.service {
+    min-height: 300px;
+
+    text-align: center;
+    padding: 2rem;
+}
+.service-item-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.service-item {
+    width: 30%;
+}
+.service-item * {
+    padding-bottom: 1.2rem;
+    line-height: 1.6rem;
+}
+.service-item li {
+    padding: 0;
+}
+@media (width < 760px) {
+    .service-item {
+        width: 80%;
+    }
+}
+.service-item ul {
+    list-style-position: inside;
+}
+
+/************************** our machines */
+.machines-wrap {
+    background-color: #192a3d;
+    background-image: linear-gradient(190deg, #192a3d 56%, #3A4F66 50%);
+    color: white;
+    padding: 2rem;
+}
+.machines-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.machines-left,
+.machines-right {
+    width: 50%;
+    line-height: 1.4rem;
+}
+.machines-right * {
+    padding: 0.5rem;
+}
+@media (width < 760px) {
+    .machines-left,
+    .machines-right {
+        width: 90%;
+    }
+}
+.machines-img {
+    width: 100%;
+}
+
+/************************** reference */
+.reference-wrap {
+    padding: 2rem;
+}
+.reference-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.reference {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+}
+@media (width < 710px) {
+    .reference {
+        width: 70%;
+    }
+}
+.reference img {
+    width: 100%;
+}
+
+/************************** contact */
+.products-wrap {
+    margin-top: 6rem;
+}
+.product-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/************************** contact */
+.contact-wrap {
+    background-color: #efefef;
+    padding: 2rem;
+}
+.contact-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 24%;
+    min-width: 300px;
+    padding-bottom: 4rem;
+    gap: 1rem;
+}@media (width < 760px) {
+    .contact {
+        width: 80%;
+    }
+}
